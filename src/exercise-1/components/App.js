@@ -20,6 +20,7 @@ class App extends Component {
             <NavLink id={'link_about'} className={'link'} to={'/about-us'}>About Us</NavLink>
           </div>
           <Switch>
+            <Route exact path={'/'} component={Home}/>
             <Route exact path={'/products'} component={Products}/>
             <Route exact path={'/my-profile'} component={ProfilePage}/>
             <Route exact path={'/about-us'} component={AboutUs}/>
@@ -28,7 +29,7 @@ class App extends Component {
 
             <Redirect exact from={'/goods'} to={'/products'}/>
 
-            <Route path={'/'} component={Home}/>
+            <Redirect to={'/'} component={Home}/>
           </Switch>
         </Router>
       </div>
