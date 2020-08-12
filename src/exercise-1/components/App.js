@@ -6,6 +6,7 @@ import ProfilePage from "./ProfilePage";
 import AboutUs from "./AboutUs";
 import Products from "../../exercise-2/components/Products";
 import ProductDetail from "../../exercise-2/components/ProductDetail";
+import {Redirect} from "react-router";
 
 class App extends Component {
   render() {
@@ -18,12 +19,16 @@ class App extends Component {
             <NavLink id={'link_profile'} className={'link'} to={'/my-profile'}>My Profile</NavLink>
             <NavLink id={'link_about'} className={'link'} to={'/about-us'}>About Us</NavLink>
           </div>
-          <Route exact path={'/'} component={Home}/>
-          <Route exact path={'/products'} component={Products}/>
-          <Route exact path={'/my-profile'} component={ProfilePage}/>
-          <Route exact path={'/about-us'} component={AboutUs}/>
           <Switch>
+            <Route exact path={'/products'} component={Products}/>
+            <Route exact path={'/my-profile'} component={ProfilePage}/>
+            <Route exact path={'/about-us'} component={AboutUs}/>
+
             <Route path={'/products/:id'} render={(props) => <ProductDetail {...props} />}/>
+
+            <Redirect exact from={'/goods'} to={'/products'}/>
+
+            <Route path={'/'} component={Home}/>
           </Switch>
         </Router>
       </div>
