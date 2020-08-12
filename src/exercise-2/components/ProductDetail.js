@@ -1,9 +1,7 @@
 import React from 'react'
 
 class ProductDetail extends React.Component {
-  state = {
-
-  }
+  state = {}
 
   render() {
     return (
@@ -14,12 +12,13 @@ class ProductDetail extends React.Component {
             <p key={propKey}>{propKey}: {this.state[propKey]}</p>
           );
         })}
+        <p>URL: {this.props.match.url}</p>
       </div>
     )
   }
 
   componentDidMount() {
-    console.log(this.props.match.params.id);
+    // console.log(this.props.match.params.id);
     let product = this.getProductDetail(this.props.match.params.id);
     this.setState(product);
   }
