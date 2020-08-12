@@ -1,0 +1,24 @@
+.toolbar {
+    background: gray;
+    height: 60px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.link {
+    margin-right: 40px;
+    font-size: 1.5em;
+
+    text-decoration: none;
+}
+
+.selected_link {
+    text-decoration: underline;
+}
+
+.section {
+    margin-top: 30px;
+    margin-left: 30px;
+}
